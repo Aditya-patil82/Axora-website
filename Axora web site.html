@@ -1,269 +1,272 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Axora — Luxury Tech & Education</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axora EDUcare | Exams</title>
 <style>
-:root{
-  --bg:#070709;
-  --card: rgba(255,255,255,0.04);
-  --muted:#bdbdbd;
-  --gold1:#ffcc00;
-  --gold2:#ff8800;
-  --glass-border: rgba(255,255,255,0.06);
-}
-*{box-sizing:border-box;}
-body,html{margin:0;padding:0;font-family:'Poppins',sans-serif;background:radial-gradient(1200px 600px at 10% 10%, rgba(255,200,80,0.03), transparent), linear-gradient(180deg,#040406 0%, #0b0b0f 100%);color:#fff;scroll-behavior:smooth;}
-a{text-decoration:none;color:inherit;}
-
-/* NAV */
-.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;position:fixed;top:0;left:0;right:0;z-index:50;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px);border-bottom:1px solid var(--glass-border);}
-.brand{display:flex;align-items:center;gap:14px;}
-.logo{font-weight:700;font-size:1.2rem;letter-spacing:1px;background:linear-gradient(90deg,var(--gold1),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-links{display:flex;gap:18px;align-items:center;}
-.nav-links a{padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:500;}
-.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.02);}
-.cta{padding:8px 14px;border-radius:12px;background:linear-gradient(90deg,var(--gold1),var(--gold2));color:#111;font-weight:600;cursor:pointer;}
-
-/* HERO */
-.hero{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:120px 30px 60px;position:relative;}
-.hero-inner{text-align:center;max-width:1100px;}
-.title{font-size:4rem;margin:0;line-height:1;}
-.title.glow{background:linear-gradient(90deg,var(--gold1),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 6px 30px rgba(255,150,0,0.09);}
-.subtitle{margin-top:12px;font-size:1.15rem;color:var(--muted);}
-.cofound{margin-top:18px;font-size:1rem;color:#e7d8a3;}
-.tag{margin-top:14px;font-style:italic;color:var(--gold1);}
-.hero-ctas{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:26px;}
-
-/* Luxury Buttons */
-.lux-btn{
-  padding: 14px 28px;
-  font-size:1.1rem;
-  font-weight:700;
-  border-radius:12px;
-  border:2px solid rgba(255,255,255,0.1);
-  background: linear-gradient(145deg, rgba(255,200,80,0.2), rgba(255,120,0,0.2));
-  color:#fff;
-  cursor:pointer;
-  position:relative;
-  overflow:hidden;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(6px);
-  box-shadow:0 8px 20px rgba(255,200,80,0.3), 0 0 10px rgba(255,120,0,0.2);
-}
-.lux-btn::before{
-  content:"";
-  position:absolute;
-  top:-50%; left:-50%;
-  width:200%; height:200%;
-  background: linear-gradient(60deg,#ffcc00,#ff8800,#ffcc00,#ff8800);
-  background-size:400% 400%;
-  z-index:0;
-  filter:blur(30px);
-  opacity:0.6;
-  transition:all 0.6s ease;
-  animation: moveGradient 6s linear infinite;
-}
-.lux-btn:hover::before{opacity:0.9;}
-.lux-btn span{position:relative;z-index:1;}
-.lux-btn.primary{background:linear-gradient(90deg,#ffcc00,#ff8800);color:#111;border:none;box-shadow:0 8px 25px rgba(255,200,80,0.5);}
-.lux-btn.shopping{background:linear-gradient(135deg,#ff88aa,#ffcc00);color:#111;border:none;box-shadow:0 8px 25px rgba(255,136,170,0.5);}
-@keyframes moveGradient{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-
-/* SECTIONS */
-.container{max-width:1100px;margin:40px auto;padding:0 20px;}
-h2.section-title{font-size:1.35rem;margin:0 0 18px 0;color:var(--gold1);}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.card{background:var(--card);border:1px solid var(--glass-border);padding:18px;border-radius:14px;}
-.muted{color:var(--muted);}
-
-/* EDUCATION SUB BUTTONS */
-.edu-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
-.chip{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,0.03);cursor:pointer;}
-.chip.active{background:linear-gradient(90deg,var(--gold1),var(--gold2));color:#111;border:none;}
-.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
-.note{display:flex;flex-direction:column;gap:8px;}
-.download{display:inline-block;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);font-weight:600;}
-
-/* NEWS / TICKER */
-.ticker{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:10px;border:1px solid var(--glass-border);display:flex;gap:12px;align-items:center;}
-.news-list{display:flex;flex-direction:column;gap:12px;}
-
-/* FOOTER */
-footer{padding:28px 20px;margin-top:40px;text-align:center;color:var(--muted);}
-
-/* RESPONSIVE */
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.title{font-size:2.8rem}.nav{padding:12px 20px}}
-@media(max-width:600px){.grid{grid-template-columns:1fr}.hero{padding-top:100px}.title{font-size:2rem}.nav-links{display:none}}
-
-/* FLOATING DECORATION */
-.floating{position:absolute;right:-60px;top:40%;width:300px;height:300px;background:radial-gradient(circle at 20% 20%, rgba(255,200,80,0.06), transparent), linear-gradient(45deg, rgba(255,120,0,0.02), transparent);filter:blur(30px);transform:rotate(20deg);pointer-events:none;}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background: radial-gradient(circle at top left, #0b0b0b,#1a1a1a);color:#fff;scroll-behavior:smooth;}
+header{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(15px);text-align:center;padding:20px 0;z-index:1000;box-shadow:0 0 20px rgba(255,215,0,0.3);}
+header h1{font-size:2.5em;color:gold;letter-spacing:2px;text-shadow:0 0 20px #FFD700;}
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:120px 20px;text-align:center;}
+.glass-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.2);border-radius:25px;backdrop-filter:blur(25px);padding:40px;max-width:900px;margin:20px;box-shadow:0 0 50px rgba(255,215,0,0.2);transition:all 0.4s ease;}
+.glass-card:hover{transform:translateY(-8px);box-shadow:0 0 70px rgba(255,215,0,0.4);}
+h2{font-size:2em;margin-bottom:20px;color:gold;text-shadow:0 0 15px rgba(255,215,0,0.3);}
+p{color:#bbb;font-size:1.1em;margin-bottom:15px;}
+input,button,select{padding:12px 20px;margin:10px;font-size:1em;border-radius:10px;border:none;cursor:pointer;}
+button{background:gold;color:#000;font-weight:600;transition:all 0.3s ease;}
+button:hover{background:#fff;color:#000;}
+#exam-section, #result-section, #chooseExam{display:none;}
+.question{margin:15px 0;text-align:left;}
+.options button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px;background:rgba(255,215,0,0.1);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all 0.3s;}
+.options button:hover{background:rgba(255,215,0,0.3);color:#000;}
+footer{background:rgba(0,0,0,0.7);padding:15px;text-align:center;font-size:0.9em;color:gold;border-top:1px solid rgba(255,255,255,0.1);}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<div class="nav">
-  <div class="brand">
-    <div class="logo">Axora</div>
-    <div class="muted">Innovation Studio</div>
-  </div>
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#education" onclick="showSection('education')">PUC Education</a>
-    <a href="#technology" onclick="showSection('technology')">Technology</a>
-    <a href="#news" onclick="showSection('news')">News</a>
-    <a class="cta" href="#premium" onclick="showSection('premium')">Premium</a>
-  </div>
-</div>
+<header>
+<h1>Axora EDUcare</h1>
+<p>12th Exams — Commerce & Science</p>
+</header>
 
-<main>
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="floating"></div>
-  <div class="hero-inner">
-    <h1 class="title glow">Axora</h1>
-    <div class="subtitle">New Games • New Apps • New Software • New Innovation</div>
-    <div class="cofound">Co-Founder & Owner: <strong>Aditya Patil</strong></div>
-    <div class="tag">A Tech Company for the Future</div>
-    <div class="hero-ctas">
-      <button class="lux-btn" onclick="showSection('education')"><span>Explore Education</span></button>
-      <button class="lux-btn" onclick="showSection('technology')"><span>Explore Technology</span></button>
-      <button class="lux-btn primary" onclick="showSection('news')"><span>Latest News</span></button>
-      <button class="lux-btn shopping" onclick="window.open('https://www.flipkart.com/search?q=boys+girls+trending+outfit','_blank')"><span>Online Shopping</span></button>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="container" style="display:none;">
-<h2 class="section-title">PUC Education</h2>
-<div class="edu-tabs" id="eduTabs">
-  <div class="chip active" data-key="1s" onclick="selectEdu('1s')">1st PUC Science</div>
-  <div class="chip" data-key="2s" onclick="selectEdu('2s')">2nd PUC Science</div>
-  <div class="chip" data-key="1c" onclick="selectEdu('1c')">1st PUC Commerce</div>
-  <div class="chip" data-key="2c" onclick="selectEdu('2c')">2nd PUC Commerce</div>
-</div>
-<div id="eduContent">
-<!-- Sample Note Card -->
-<div class="edu-grid" data-edu="1s">
-  <div class="card note">
-    <h3>Notes - Physics</h3>
-    <p class="muted">Short and easy notes for every chapter (Kannada)</p>
-    <a class="download" href="#">Download PDF</a>
-  </div>
-  <div class="card note">
-    <h3>Important Questions</h3>
-    <p class="muted">Chapterwise important questions & model answers</p>
-    <a class="download" href="#">View</a>
-  </div>
-  <div class="card note">
-    <h3>Previous Year Papers</h3>
-    <p class="muted">Solved & unsolved question papers</p>
-    <a class="download" href="#">Download</a>
-  </div>
-</div>
-<!-- Add other grids similarly -->
+<section id="login-section">
+<div class="glass-card">
+<h2>Enter Your Details to Start</h2>
+<input type="text" id="username" placeholder="Enter Your Name" required>
+<input type="email" id="useremail" placeholder="Enter Your Email" required>
+<button onclick="loginUser()">Next</button>
+<p id="loginMsg"></p>
 </div>
 </section>
 
-<!-- TECHNOLOGY -->
-<section id="technology" class="container" style="display:none;">
-<h2 class="section-title">Technology</h2>
-<div class="grid">
-<div class="card">
-  <h3>Daily Tech Updates</h3>
-  <div class="ticker" id="ticker">
-    <div class="muted">Latest:</div>
-    <div id="tickerText" style="font-weight:600;margin-left:8px">AI model update — New features released.</div>
-  </div>
-  <p class="muted" style="margin-top:12px">Topics: AI • AR/VR • Blockchain • Robotics • Gadgets</p>
-</div>
-<div class="card">
-  <h3>Apps & Software</h3>
-  <p class="muted">Short reviews, how-to guides and downloads (when allowed)</p>
-  <ul style="margin-top:10px;color:var(--muted)">
-    <li>New app spotlight</li>
-    <li>Developer interviews</li>
-    <li>Tools for students</li>
-  </ul>
-</div>
-<div class="card">
-  <h3>Startups & Innovation</h3>
-  <p class="muted">Showcase of new ideas, prototypes and demos</p>
-</div>
+<section id="chooseExam">
+<div class="glass-card">
+<h2>Choose Your Exam</h2>
+<button onclick="startSelectedExam('commerce')">Commerce — Accounting Chapter 1</button>
+<button onclick="startSelectedExam('science')">Science — Matrix / General Science</button>
 </div>
 </section>
 
-<!-- NEWS -->
-<section id="news" class="container" style="display:none;">
-<h2 class="section-title">Daily News</h2>
-<div class="news-list">
-<div class="card">
-  <h3>Education: New syllabus updates</h3>
-  <p class="muted">Coming Soon…</p>
-</div>
-<div class="card">
-  <h3>Technology: AI Hackathon winners</h3>
-  <p class="muted">Coming Soon…</p>
-</div>
-<div class="card">
-  <h3>World: Quick headlines</h3>
-  <p class="muted">Coming Soon…</p>
-</div>
+<section id="exam-section">
+<div class="glass-card">
+<h2 id="examTitle"></h2>
+<p id="examTimer">⏱ Time left: </p>
+<div id="questionArea"></div>
 </div>
 </section>
 
-<!-- PREMIUM -->
-<section id="premium" class="container" style="display:none;">
-<h2 class="section-title">Premium Membership</h2>
-<div class="grid">
-<div class="card">
-  <h3>What you get</h3>
-  <ul class="muted">
-    <li>Full chapter notes (downloadable PDFs)</li>
-    <li>Model answers & mock tests</li>
-    <li>Ad-free reading</li>
-    <li>Early access to courses</li>
-  </ul>
-</div>
-<div class="card">
-  <h3>Subscribe</h3>
-  <p class="muted">₹49/month — integrate Razorpay/Stripe</p>
-  <button class="lux-btn primary" onclick="alert('Payment flow placeholder')">Subscribe ₹49 / month</button>
-</div>
-<div class="card">
-  <h3>Why Premium?</h3>
-  <p class="muted">Monetize with value — PDFs, tests and exclusive lessons.</p>
-</div>
+<section id="result-section">
+<div class="glass-card">
+<h2>Result</h2>
+<p id="resultText"></p>
+<button onclick="showAnswers()" style="background:#2d8f4a;">Show Correct Answers</button>
+<div id="answerKey"></div>
 </div>
 </section>
 
-</main>
-
-<footer>
-<div style="max-width:900px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-  <div><strong>Axora</strong> • New Games • New Apps • New Software • New Innovation</div>
-  <div>
-    <form onsubmit="event.preventDefault();alert('Subscribed: '+this.email.value);this.reset();">
-      <input name="email" type="email" placeholder="apatil75135@gmail.com" required style="padding:8px;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:#fff;margin-right:8px">
-      <button class="lux-btn" style="padding:9px 12px">Subscribe</button>
-    </form>
-  </div>
-</div>
-<div style="margin-top:18px;color:var(--muted)">© <span id="year"></span> Axora — Made with ❤️ by Aditya Patil</div>
-</footer>
+<footer>Designed by Aadii Patil & Team © 2025</footer>
 
 <script>
-document.getElementById('year').innerText = new Date().getFullYear();
+// Global Variables
+let user = {}, currentQ = [], currentIndex = 0, score = 0, timer;
+let loginSection = document.getElementById('login-section');
+let chooseExam = document.getElementById('chooseExam');
+let examSection = document.getElementById('exam-section');
+let resultSection = document.getElementById('result-section');
+let questionArea = document.getElementById('questionArea');
+let examTimerDisplay = document.getElementById('examTimer');
+let resultText = document.getElementById('resultText');
+let answerKeyDiv = document.getElementById('answerKey');
+let examTitle = document.getElementById('examTitle');
 
-function hideAllSections(){['home','education','technology','news','premium'].forEach(id=>{const el=document.getElementById(id);if(el) el.style.display=(id==='home')?'flex':'none';});window.scrollTo({top:0,behavior:'smooth'});}
-function showSection(id){hideAllSections();const el=document.getElementById(id);if(el) el.style.display=(id==='home')?'flex':'block';}
-function selectEdu(key){document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c.dataset.key===key));document.querySelectorAll('[data-edu]').forEach(el=>{el.style.display=(el.dataset.edu===key)?'grid':'none';});window.scrollTo({top:120,behavior:'smooth'});}
-const tickerItems=['AI model update — New features released.','New app: StudyBuddy launched for PUC students.','Gadget: Budget phone review — best in class.','Startup: Local hackathon winners announced.'];let tIndex=0;setInterval(()=>{tIndex=(tIndex+1)%tickerItems.length;const t=document.getElementById('tickerText');if(t) t.innerText=tickerItems[tIndex];},4500);
-window.addEventListener('load',()=>{const hash=location.hash.replace('#','');if(hash&&document.getElementById(hash)) showSection(hash);});
+// Login
+function loginUser(){
+    let name=document.getElementById('username').value.trim();
+    let email=document.getElementById('useremail').value.trim();
+    if(!name||!email){document.getElementById('loginMsg').innerText='Enter name & email'; return;}
+    user={name,email};
+    loginSection.style.display='none';
+    chooseExam.style.display='flex';
+}
+
+// Start selected exam
+function startSelectedExam(exam){
+    chooseExam.style.display='none';
+    examSection.style.display='flex';
+    if(exam==='commerce'){
+        currentQ = commerce; examTitle.innerText="Commerce — Accounting Chapter 1";
+    } else {
+        currentQ = science; examTitle.innerText="Science — Matrix / General Science";
+    }
+    currentIndex = 0; score = 0;
+    showQuestion();
+    let timeLeft = 60*60; // 60 mins
+    timerDisplay(timeLeft);
+    timer = setInterval(()=>{timeLeft--; timerDisplay(timeLeft); if(timeLeft<=0){clearInterval(timer); finishExam();}},1000);
+}
+
+// Timer
+function timerDisplay(seconds){
+    let m=Math.floor(seconds/60);
+    let s=seconds%60;
+    examTimerDisplay.innerText=`⏱ Time left: ${m}m ${s}s`;
+}
+
+// Show Question
+function showQuestion(){
+    if(currentIndex>=currentQ.length){finishExam(); return;}
+    let q=currentQ[currentIndex];
+    questionArea.innerHTML=`<div class="question"><h3>Q${currentIndex+1}: ${q.q}</h3></div>`+
+        `<div class="options">`+
+        q.options.map((opt,i)=>`<button onclick="answer(${i})">${opt}</button>`).join('')+
+        `</div>`;
+}
+
+// Answer
+function answer(choice){
+    if(choice===currentQ[currentIndex].answer) score++;
+    currentIndex++;
+    showQuestion();
+}
+
+// Finish Exam
+function finishExam(){
+    clearInterval(timer);
+    examSection.style.display='none';
+    resultSection.style.display='flex';
+    resultText.innerHTML=`${user.name}, you scored <b>${score}</b> out of <b>${currentQ.length}</b>`;
+}
+
+// Show Answers
+function showAnswers(){
+    let html = '<h3>Answer Key</h3><ol>';
+    currentQ.forEach(q=>{html+=`<li>${q.q} — <b>${q.options[q.answer]}</b></li>`;});
+    html+='</ol>';
+    answerKeyDiv.innerHTML = html;
+}
+
+// =======================
+// 60 Commerce Questions (Accounting Chapter 1)
+const commerce = [
+{q:"1. What is a Not-for-Profit Organization?",options:["Owned by shareholders","Operates for service","Generates profit","Government body"],answer:1},
+{q:"2. Which account shows capital for NPO?",options:["Capital A/C","Fund A/C","Revenue A/C","Drawings A/C"],answer:1},
+{q:"3. Receipts and Payments A/C is?",options:["Nominal A/C","Real A/C","Personal A/C","Special A/C"],answer:3},
+{q:"4. Income and Expenditure A/C shows?",options:["Assets","Liabilities","Surplus/Deficit","Drawings"],answer:2},
+{q:"5. Fund received for specific purpose?",options:["General Fund","Specific Fund","Capital Fund","Revenue Fund"],answer:1},
+{q:"6. Membership fees received recorded in?",options:["Revenue A/C","Fund A/C","Capital A/C","Bank"],answer:0},
+{q:"7. Surplus in I&E A/C transferred to?",options:["Capital Fund","General Fund","Revenue A/C","Bank"],answer:1},
+{q:"8. Expenses paid for building maintenance recorded in?",options:["Capital A/C","Revenue A/C","Expenditure A/C","Liability"],answer:2},
+{q:"9. Donations for specific purpose recorded in?",options:["General Fund","Specific Fund","Capital Fund","Revenue"],answer:1},
+{q:"10. Purchase of fixed asset recorded in?",options:["Capital Fund","Revenue Fund","Expenditure A/C","Bank"],answer:0},
+{q:"11. Depreciation in NPO accounted in?",options:["Income & Expenditure","Receipts & Payments","Capital Fund","Specific Fund"],answer:0},
+{q:"12. Salary paid to staff recorded in?",options:["Income & Expenditure","Receipts & Payments","Capital Fund","Specific Fund"],answer:0},
+{q:"13. Subscription due recorded in?",options:["Receivable","Income","Asset","Liability"],answer:0},
+{q:"14. Entrance fees recorded in?",options:["Capital Fund","General Fund","Specific Fund","Revenue"],answer:0},
+{q:"15. Fund for new project recorded in?",options:["Capital Fund","Specific Fund","Revenue Fund","General Fund"],answer:1},
+{q:"16. Opening balance of funds recorded in?",options:["Balance Sheet","Income A/C","Expenditure A/C","Receipts A/C"],answer:0},
+{q:"17. Donation of building recorded in?",options:["Asset A/C","Capital Fund","Revenue Fund","Expenditure","Liability"],answer:0},
+{q:"18. Subscription received in advance recorded in?",options:["Liability","Asset","Revenue","Expense"],answer:0},
+{q:"19. Payment of grant recorded in?",options:["Expenditure A/C","Capital Fund","Revenue Fund","Bank"],answer:0},
+{q:"20. Income from investments recorded in?",options:["Revenue A/C","Capital Fund","Specific Fund","Bank"],answer:0},
+{q:"21. Surplus transferred to fund shown in?",options:["Balance Sheet","Income & Expenditure A/C","Receipts & Payments","Expenditure A/C"],answer:1},
+{q:"22. Closing balance of fund recorded in?",options:["Balance Sheet","Income & Expenditure","Receipts & Payments","Revenue"],answer:0},
+{q:"23. Fund utilization recorded in?",options:["Income A/C","Expenditure A/C","Balance Sheet","Bank"],answer:1},
+{q:"24. Restricted fund can be used for?",options:["Specific purpose","Any purpose","General expenses","Drawings"],answer:0},
+{q:"25. Assets funded by donation shown in?",options:["Capital Fund","Revenue Fund","General Fund","Specific Fund"],answer:3},
+{q:"26. Receipts for building maintenance recorded in?",options:["Revenue A/C","Capital Fund","Specific Fund","Expenditure"],answer:0},
+{q:"27. Grant received recorded in?",options:["Revenue Fund","Capital Fund","Expenditure A/C","Specific Fund"],answer:0},
+{q:"28. Accrued income recorded in?",options:["Asset","Liability","Revenue","Expenditure"],answer:0},
+{q:"29. Prepaid expenses recorded in?",options:["Asset","Liability","Revenue","Expenditure"],answer:0},
+{q:"30. Life membership fees treated as?",options:["Capital Fund","Revenue Fund","Specific Fund","Expenditure"],answer:0},
+{q:"31. Receipts of NPO divided into?",options:["Capital & Revenue","Fund & Surplus","Asset & Liability","Drawings"],answer:1},
+{q:"32. Excess of income over expenditure called?",options:["Surplus","Deficit","Profit","Loss"],answer:0},
+{q:"33. Deficit in I&E A/C transferred to?",options:["General Fund","Specific Fund","Capital Fund","Bank"],answer:0},
+{q:"34. Expenses outstanding recorded in?",options:["Liability","Asset","Revenue","Expenditure"],answer:0},
+{q:"35. Income received in advance recorded in?",options:["Liability","Asset","Revenue","Expenditure"],answer:0},
+{q:"36. Capital fund of NPO appears in?",options:["Balance Sheet","Income & Expenditure","Receipts & Payments","Expenditure"],answer:0},
+{q:"37. Specific fund appears in?",options:["Balance Sheet","I&E","R&P","Bank"],answer:0},
+{q:"38. General fund appears in?",options:["Balance Sheet","Income & Expenditure","Receipts & Payments","Bank"],answer:0},
+{q:"39. Subscription income recorded in?",options:["Revenue Fund","Capital Fund","Specific Fund","General Fund"],answer:0},
+{q:"40. Fixed assets depreciation appears in?",options:["I&E","Balance Sheet","R&P","Expenditure"],answer:1},
+{q:"41. Income from investments credited to?",options:["Revenue Fund","Capital Fund","Specific Fund","General Fund"],answer:0},
+{q:"42. Closing balance of I&E transferred to?",options:["Fund A/C","Balance Sheet","Bank","Revenue"],answer:0},
+{q:"43. Payment of salaries recorded in?",options:["I&E","Revenue Fund","Capital Fund","Specific Fund"],answer:0},
+{q:"44. NPO accounts follow?",options:["Double entry","Single entry","Cash only","Accrual only"],answer:0},
+{q:"45. Accounting year ends recorded in?",options:["Balance Sheet","Income & Expenditure","Receipts & Payments","Bank"],answer:1},
+{q:"46. Funds received in kind recorded in?",options:["Asset A/C","Capital Fund","Revenue Fund","Specific Fund"],answer:0},
+{q:"47. Grant utilization recorded in?",options:["Expenditure A/C","Capital Fund","Revenue Fund","Bank"],answer:0},
+{q:"48. Purchase of assets for NPO recorded in?",options:["Capital Fund","Revenue Fund","Expenditure A/C","Bank"],answer:2},
+{q:"49. Receipts & Payments account is?",options:["Nominal","Real","Personal","Special"],answer:3},
+{q:"50. Income & Expenditure A/C is?",options:["Nominal","Real","Personal","Special"],answer:0},
+{q:"51. Specific fund surplus transferred to?",options:["Balance Sheet","Fund A/C","Revenue Fund","Bank"],answer:1},
+{q:"52. NPO receives donation for assets recorded in?",options:["Asset A/C","Revenue Fund","Capital Fund","Expenditure"],answer:0},
+{q:"53. Closing fund balance shown in?",options:["Balance Sheet","I&E","R&P","Bank"],answer:0},
+{q:"54. Expenses paid for office recorded in?",options:["Expenditure","Revenue Fund","Capital Fund","Specific Fund"],answer:0},
+{q:"55. Bank charges recorded in?",options:["Expenditure","Revenue Fund","Capital Fund","Specific Fund"],answer:0},
+{q:"56. Receipts for event recorded in?",options:["Revenue","Capital","Specific Fund","General Fund"],answer:0},
+{q:"57. Income of endowment fund recorded in?",options:["Specific Fund","Revenue Fund","Capital Fund","General Fund"],answer:0},
+{q:"58. Transfer from I&E to Fund recorded in?",options:["Fund A/C","Balance Sheet","Revenue","Expenditure"],answer:0},
+{q:"59. General fund utilized for?",options:["General purposes","Specific purpose","Assets","Liabilities"],answer:0},
+{q:"60. All NPO accounts follow?",options:["Double entry","Single entry","Cash only","Accrual"],answer:0}
+];
+
+
+// =======================
+// 60 Science Questions (Matrix / General Science)
+const science = [
+
+{q:"15. Order of matrix?",options:["Rows x Columns","Columns x Rows","Rows only","Columns only"],answer:0},
+{q:"16. Matrix [[1,0],[0,1]] is?",options:["Identity","Zero","Symmetric","Skew-symmetric"],answer:0},
+{q:"17. Matrix [[1,2],[3,4]] + [[4,3],[2,1]]?",options:["[[5,5],[5,5]]","[[1,2],[3,4]]","[[4,3],[2,1]]","[[0,0],[0,0]]"],answer:0},
+{q:"18. Determinant of [[2,3],[1,4]]?",options:["5","8","-5","2"],answer:2},
+{q:"19. If det(A)=0, matrix A is?",options:["Singular","Non-singular","Square","Identity"],answer:0},
+{q:"20. Matrix [[0,1],[-1,0]] is?",options:["Skew-symmetric","Symmetric","Identity","Zero"],answer:0},
+{q:"21. Addition is defined for matrices of?",options:["Same order","Any order","Only square","Only row matrices"],answer:0},
+{q:"22. Scalar multiplication changes?",options:["Values only","Order","Type","Determinant only"],answer:0},
+{q:"23. Product of 2x2 and 2x3 matrix?",options:["2x3 matrix","2x2 matrix","3x2 matrix","3x3 matrix"],answer:0},
+{q:"24. Transpose of transpose?",options:["Original matrix","Inverse","Zero matrix","Identity"],answer:0},
+{q:"25. Inverse exists for?",options:["Non-singular matrices","Singular matrices","Zero matrices","Any matrix"],answer:0},
+{q:"26. Determinant of [[a,b],[c,d]]?",options:["ad-bc","ab+cd","a+d","None"],answer:0},
+{q:"27. Rank of zero matrix?",options:["0","1","Undefined","Same as order"],answer:0},
+{q:"28. Identity + Zero matrix?",options:["Identity","Zero","Undefined","Inverse"],answer:0},
+{q:"29. Symmetric matrix condition?",options:["A = A^T","A = -A^T","Det(A)=0","Trace=0"],answer:0},
+{q:"30. Skew-symmetric diagonal elements?",options:["0","1","Any","Negative"],answer:0},
+{q:"31. 3x2 matrix has?",options:["3 rows,2 columns","2 rows,3 columns","3x3","2x2"],answer:0},
+{q:"32. Product AB exists if?",options:["Cols of A = Rows of B","Rows A=Rows B","Cols A=Cols B","Any"],answer:0},
+{q:"33. Determinant of 3x3 zero matrix?",options:["0","1","Undefined","3"],answer:0},
+{q:"34. Trace of identity 3x3?",options:["3","0","1","2"],answer:0},
+{q:"35. Matrix with all zeros?",options:["Zero matrix","Identity","Diagonal","Scalar"],answer:0},
+{q:"36. Matrix with all ones?",options:["Not identity","Identity","Zero","Scalar"],answer:0},
+{q:"37. Diagonal matrix?",options:["Only diagonal non-zero","All zero","Identity only","Square only"],answer:0},
+{q:"38. Scalar matrix?",options:["Diagonal with same value","Identity","Zero","Any matrix"],answer:0},
+{q:"39. Elementary row operation changes?",options:["Determinant & Row","Only column","Only row count","Nothing"],answer:0},
+{q:"40. Addition of matrix and its negative?",options:["Zero matrix","Identity","Same matrix","Inverse"],answer:0},
+{q:"41. Multiplication by zero matrix?",options:["Zero matrix","Identity","Same matrix","Undefined"],answer:0},
+{q:"42. Commutative property holds for?",options:["Addition","Multiplication","Both","None"],answer:0},
+{q:"43. Associative property holds for?",options:["Addition & Multiplication","Addition only","Multiplication only","None"],answer:0},
+{q:"44. Distributive property holds?",options:["Yes","No","Sometimes","Only scalar"],answer:0},
+{q:"45. Determinant of product AB?",options:["det(A)det(B)","det(A)+det(B)","det(A)-det(B)","Cannot say"],answer:0},
+{q:"46. Inverse of product AB?",options:["B^-1 A^-1","A^-1 B^-1","A B","B A"],answer:0},
+{q:"47. Singular matrix determinant?",options:["0","1","Any","Undefined"],answer:0},
+{q:"48. Non-square matrix has inverse?",options:["No","Yes","Sometimes","Always"],answer:0},
+{q:"49. Cofactor expansion along row?",options:["Yes","No","Only column","Diagonal"],answer:0},
+{q:"50. Adjoint of A used for?",options:["Finding inverse","Transpose","Determinant","Rank"],answer:0},
+{q:"51. Rank of [[1,2,3],[4,5,6],[7,8,9]]?",options:["2","3","1","0"],answer:0},
+{q:"52. Matrix with one row zero?",options:["Rank < rows","Rank=rows","Rank undefined","Full rank"],answer:0},
+{q:"53. Matrix with full rank?",options:["Rank = min(rows,cols)","Rank<min","Rank>min","Cannot say"],answer:0},
+{q:"54. Matrix [[1,2],[3,4]] multiplied by [[0,1],[1,0]]?",options:["[[2,1],[4,3]]","[[1,2],[3,4]]","[[0,0],[0,0]]","[[1,1],[1,1]]"],answer:0},
+{q:"55. Inverse of 2x2 [[a,b],[c,d]]?",options:["1/(ad-bc)[[d,-b],[-c,a]]","Same","Undefined","None"],answer:0},
+{q:"56. Elementary row operation to get?",options:["Row echelon form","Inverse","Determinant","Trace"],answer:0},
+{q:"57. Matrix [[2,1],[1,2]] is?",options:["Symmetric","Skew-symmetric","Identity","Zero"],answer:0},
+{q:"58. Matrix [[0,1],[1,0]] is?",options:["Symmetric","Skew-symmetric","Identity","Zero"],answer:0},
+{q:"59. Matrix [[1,2],[3,4]] inverse exists?",options:["Yes","No","Sometimes","Always"],answer:0},
+{q:"60. Rank of [[1,0,0],[0,1,0],[0,0,1]]?",options:["3","0","1","2"],answer:0}
+
+];
 </script>
 
 </body>
